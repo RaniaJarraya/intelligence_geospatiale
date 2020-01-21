@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Un squelette d'application OL</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <!-- OpenLayers CSS -->
+    <link rel="stylesheet" href="css/ol.css" type="text/css">
+    <link rel="stylesheet" href="css/ol3-layerswitcher.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./css/osm_gs.css">
+    <link rel="stylesheet" type="text/css" href="./css/awesomplete.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <!-- Autres styles de librairies -->
+    <!-- nos styles personnalisés-->
+    <!-- bootswatch yeti theme et jqyery-ui-->
+    <link rel="stylesheet" type="text/css" href="./css/jquery-ui.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/yeti/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+<!-- Notre code HTML -->
+
+
+<div class="btn-group btn-group-sm" role="group" aria-label="Draw">
+    <button id="pan" type="button" class="btn btn-primary">Pan</button>
+    <button id="select" type="button" class="btn btn-default">Select</button>
+    <button id="point" type="button" class="btn btn-success">Point</button>
+    <button id="line" type="button" class="btn btn-success">Line</button>
+    <button id="polygon" type="button" class="btn btn-success">Polygon</button>
+    <button id="modify" type="button" class="btn btn-danger">Modify</button>
+
+</div>
+<button id="getlocation" type="button" class="btn btn-primary"><i class="fa fa-street-view fa-lg"
+                                                                  style="color:#fcf8f7"></i>Ma Position</button>
+<button id="vueGlobal" type="button" class="btn btn-primary">Vue Globale<i class="fas fa-globe-africa"></i></button>
+
+<div class="col-sm-3 col-md-3 pull-right">
+    <div class="navbar-text">Zoom sur</div>
+    <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input class = "form-control" type="text" name="sites" list="siteslist"
+                   id="capitals" placeholder="choisir un site ..."/>
+            <datalist id="siteslist"></datalist>
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="button" onclick="goToSite()"><i
+                        class="fa fa-search fa-lg"></i></button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<!--<p>Coordonnées géographiques de la souris dans les différents systèmes de projection:</p>
+<p>
+    EPSG:3857 > <span id="mouse3857" class="label">0 / 0</span></p>
+<p>
+    EPSG:4326 > <span id="mouse4326" class="label">0 / 0</span>
+</p>-->
+
+
+<!--déclaration de l'opbjet map-->
+<div id="map">
+    <div id="location" class="marker"><i class="fa fa-street-view fa-lg"
+                                         style="color:lawngreen"></i></div>
+    <div id="popup" class="ol-popup">
+        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+        <div id="popup-content"></div>
+    </div>
+</div>
+<!-- OpenLayers JS-->
+<script src="resources/ol.js" type="text/javascript"></script>
+<script src="resources/ol3-layerswitcher.js" type="text/javascript"></script>
+<!-- Autres librairies JS-->
+<script type="text/javascript" src="./resources/awesomplete.js"></script>
+<script type="text/javascript" src="./resources/jquery.js"></script>
+<script type="text/javascript" src="./resources/jquery-ui.js"></script>
+<script type="text/javascript" src="./resources/bootstrap.min.js"></script>
+<!-- Notre code JavaScript-->
+<script src="./js/osm_gs.js"></script>
+</body>
+</html>
